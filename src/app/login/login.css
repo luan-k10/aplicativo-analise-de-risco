@@ -1,0 +1,172 @@
+/* login.component.css */
+
+/* Fundo da página inteira com degradê suave */
+.page-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%; /* <-- Garante que ocupe a tela toda */
+  box-sizing: border-box; /* <-- Impede que o padding empurre a tela */
+  background: linear-gradient(180deg, #f3e5dc 0%, #ffffff 100%);
+  padding: 20px;
+}
+
+/* O cartão branco centralizado */
+.login-card {
+  background: white;
+  width: 100%;
+  max-width: 360px; /* Largura típica mobile */
+  padding: 40px 30px;
+  border-radius: 20px; /* Cantos arredondados */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
+  display: flex;
+  flex-direction: column;
+  margin: auto; /* Espaço em torno do card para telas menores */
+  
+}
+
+.login-header {
+  text-align: left; /* Título 'login' alinhado à esquerda na imagem */
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: #555;
+  margin: 0;
+  font-weight: 500;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.risco-logo {
+  max-width: 120px; /* Ajuste conforme necessário */
+  height: auto;
+}
+
+/* Container para inputs com ícones alinhados */
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #ccc; /* Estilo de linha inferior */
+  margin-bottom: 5px; /* Espaço para a label flutuante implícita */
+  padding-bottom: 5px;
+}
+
+.input-with-icon .icon {
+  color: #777;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.input-with-icon input {
+  border: none;
+  flex: 1;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-bottom-color: #d2a679; /* Cor de destaque ao focar */
+}
+
+/* Grupo para o campo de senha e link */
+.password-field-group {
+  margin-bottom: 30px;
+}
+
+.forgot-password-container {
+  text-align: right;
+  margin-top: 3px;
+}
+
+.forgot-password-link {
+  color: #888;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+/* Estilo do botão principal 'Entrar' */
+.btn-primary-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #d2a679; /* Cor bege/dourada da imagem */
+  color: #333;
+  border: none;
+  border-radius: 25px; /* Botão bem arredondado */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary-login:hover {
+  background-color: #c09668;
+}
+
+/* Divisor 'ou' */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.divider:not(:empty)::before { margin-right: .5em; }
+.divider:not(:empty)::after { margin-left: .5em; }
+
+/* Estilo do botão 'Entrar com outlook' */
+.btn-outlook-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #dcdcdc; /* Cor cinza clara da imagem */
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-outlook-login:hover {
+  background-color: #d0d0d0;
+}
+
+.outlook-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.login-footer {
+  margin-top: auto; 
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  padding-top: 20px;
+}
+
+.register-link {
+  color: #d2a679;
+  text-decoration: none;
+  font-weight: 600;
+}
