@@ -1,0 +1,152 @@
+.Container {
+  height: 100vh;
+  background-color: var(--color-background);
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.Container-registro {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container-voltar-e-titulo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.Titulo {
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.voltar-button,
+material-symbols-outlined {
+  position: absolute;
+  left: 10px;
+  cursor: pointer;
+  color: var(--color-primary-hover);
+  padding: 5px;
+}
+
+.Container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.Container-logo img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.Container-titulo-e-descricao,
+h1 {
+  font-size: 1.8rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.Container-titulo-e-descricao p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 20px 20px 0 20px;
+}
+
+.Container-formulario {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.Container-formulario-campos label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 5px;
+}
+
+.Container-fullname-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background-color: var(--color-input-background);
+  border: 1px solid var(--color-input-border);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+
+.Container-fullname-input .material-symbols-outlined {
+  font-size: 20px;
+  color: var(--color-text-light);
+
+}
+
+
+
+.Container-fullname-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+}
+
+button,
+.icon-eye {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Container-formulario .Button-account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 0 16px 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 30px;
+  transition: transform 0.1s ease;
+  touch-action: manipulation;
+}
+
+.Container-formulario .Button-account:active {
+  transform: scale(1.01);
+
+}
+
+.Container-login-link {
+  text-align: center;
+  padding: 20px;
+}
+
+.Container-login-link p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.Container-login-link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}

@@ -1,0 +1,66 @@
+<body class="Container">
+  <div class="Container-registro">
+    <div class="Container-voltar-e-titulo">
+      <div class="voltar-button">
+        <span routerLink="/login" class="material-symbols-outlined">arrow_back</span>
+      </div>
+      <h2 class="Titulo">Registra-se</h2>
+    </div>
+    <div>
+      <div class="Container-logo"></div>
+
+      <div class="Container-titulo-e-descricao">
+        <h1>Crie sua conta</h1>
+        <p>Junte-se à nossa plataforma de gestão de equipes e análise de riscos corporativos</p>
+      </div>
+
+      <form class="Container-formulario">
+        <div class="Container-formulario-campos">
+          <label>Nome</label>
+          <div class="Container-fullname-input">
+            <span class="material-symbols-outlined">person</span>
+            <input placeholder="Seu Nome" type="text" />
+          </div>
+        </div>
+
+        <div class="Container-formulario-campos">
+          <label>Email</label>
+          <div class="Container-fullname-input">
+            <span class="material-symbols-outlined">mail</span>
+            <input placeholder="Seu Email" type="email" />
+          </div>
+        </div>
+
+        <div class="Container-formulario-campos">
+          <label>Senha</label>
+          <div class="Container-fullname-input">
+            <span class="material-symbols-outlined">lock</span>
+            <input placeholder="Sua Senha" type="{{ typename }}" />
+            <button type="button">
+              <span (click)="toggleIcon()" class="material-symbols-outlined icon-eye">{{
+                iconName
+              }}</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="Container-formulario-campos">
+          <label>Confirme sua senha</label>
+          <div class="Container-fullname-input">
+            <span class="material-symbols-outlined">lock_reset</span>
+            <input type="{{ typename }}" />
+          </div>
+        </div>
+
+        <button class="Button-account" type="submit">Criar uma conta</button>
+      </form>
+
+      <div class="Container-login-link">
+        <p>
+          Já tem uma conta?
+          <a routerLink="/login"> Login </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>

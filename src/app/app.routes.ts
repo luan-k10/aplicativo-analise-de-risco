@@ -1,7 +1,16 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'cadastro', component: CadastroComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' } // Redireciona o início para o login
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
