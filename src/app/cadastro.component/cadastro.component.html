@@ -1,0 +1,50 @@
+<div class="page-background">
+  <div class="login-card">
+    <div class="logo-container">
+      <img src="assets/logo/logo-risco.png" alt="Logo Risco" class="risco-logo" />
+    </div>
+    <header class="login-header">
+      <h1 class="page-title">Novo usuário</h1>
+    </header>
+
+    <main class="login-form-container">
+      <form class="login-form">
+        <div class="input-with-icon">
+          <span class="material-symbols-outlined"> alternate_email </span>
+          <input type="text" id="matricula" placeholder="Digite seu email" />
+        </div>
+
+        <div class="nome-field-group">
+          <div class="input-with-icon">
+            <span class="material-symbols-outlined"> person</span>
+            <input type="text" id="nome" placeholder="Digite seu nome" />
+          </div>
+
+          <div class="input-with-icon">
+            <span class="material-symbols-outlined">lock</span>
+            <input type="password" id="password" placeholder="Digite sua senha" />
+            <span class="material-symbols-outlined"> visibility_lock </span>
+          </div>
+          <div class="input-with-icon">
+            <span class="material-symbols-outlined">lock</span>
+            <input type="password" id="password" placeholder="Confirmar senha" />
+            <span class="material-symbols-outlined"> visibility_lock </span>
+          </div>
+        </div>
+
+        <div class="password-field-group"></div>
+
+        <button type="submit" class="btn-primary-login">Cadastrar</button>
+      </form>
+    </main>
+
+    <footer class="login-footer">
+      <p>
+        Já possui uma conta?
+        <a routerLink="/login" class="register-link" style="cursor: pointer;">
+          Faça um login
+        </a>
+      </p>
+    </footer>
+  </div>
+</div>
