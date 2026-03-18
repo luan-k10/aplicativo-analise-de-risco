@@ -1,63 +1,76 @@
-<<<<<<< HEAD
-# aplicativo-analise-de-risco
-=======
-# AppAnaliseRisco
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=130"/>
+</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+<h1 align="center">ANALISE DE RISCO POR APLICATIVO
+<br><br></h1>
 
-## Development server
+<br>
 
-To start a local development server, run:
+<p align="center">
+  Prática de extensão interdisciplinar (PEI) .
+</p>
 
-```bash
-ng serve
-```
+<br>
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+<div align="center">
+  
+  ![PHP](https://img.shields.io/badge/-php-0D1117?style=for-the-badge&logo=php&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![HTML](https://img.shields.io/badge/-HTML-0D1117?style=for-the-badge&logo=html5&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![CSS](https://img.shields.io/badge/-CSS-0D1117?style=for-the-badge&logo=css&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![JavaScript](https://img.shields.io/badge/-JavaScript-0D1117?style=for-the-badge&logo=javascript&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![SQL](https://img.shields.io/badge/-Sql-0D1117?style=for-the-badge&logo=SQL&labelColor=0D1117&textColor=0D1117)&nbsp;  
+  
+</div>
 
-## Code scaffolding
+<div align="center">
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+  [![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages%20-000?style=for-the-badge&logo=GITHUB)](https://github.com/luan-k10/aplicativo-analise-de-risco)&nbsp;
 
-```bash
-ng generate component component-name
-```
+</div>
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+<br>
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+<br>
 
-To build the project run:
+### 🎯 Objetivo:
 
-```bash
-ng build
-```
+<br>
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Desenvolver um software de análise de risco digital compatível com bancos de dados empresariais e funcionalidades de gestão, como criação, alteração e remoção de equipes, autorização de entrada e saída de equipes e personalização na escolha dos riscos enfrentados.
 
-## Running unit tests
+- Construir um protótipo funcional baseado em análises de risco reais, seguindo o padrão estabelecido pelas normas regulamentadoras;
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- Tornar o software compatível com bancos de dados previamente construídos pelas empresas.
 
-```bash
-ng test
-```
+<br>
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+<br>
 
-```bash
-ng e2e
-```
+<div align="center">
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+  <p>
+    👨‍💻 Autores:
+  </p>
 
-## Additional Resources
+<br>
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
->>>>>>> dev
+  <samp>
+    <p>
+      <b>André Gomes da Silva</b><br>
+      <b>João Victor</b><br>
+      <b>João Vitor</b><br>
+      <b>Leticia Erlacher</b><br>
+      <b>Luan Kairo</b><br>
+      <b>Marcelo Perovano</b><br>
+      <b>Thayno Zayron</b>
+    </p>
+  </samp>
+
+<br>
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=130&section=footer"/>
