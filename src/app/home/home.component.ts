@@ -1,4 +1,4 @@
-import { NavbarComponent } from '../home/navbar/navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { Component } from '@angular/core';
 
 
