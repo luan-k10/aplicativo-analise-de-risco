@@ -1,0 +1,45 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-input-background);
+  max-width: 400px;
+  width: 88%;
+  margin: auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+}
+
+
+
+.Container-icone .material-symbols-outlined {
+  background-color: rgb(231 232 233);
+  padding: 10px;
+  border-radius: 3px;
+  color: rgb(67 71 78);
+  font-size: 1.8rem;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 10;
+}
+
+.Container p {
+  font-size: 0.7rem;
+  color: var(--color-tex);
+  padding: 2px;
+}
+
+.Container h3 {
+  font-size: 1rem;
+  color: var(--color-tex);
+  padding: 2px;
+  font-weight: 500;
+}
+
+.Container span {
+  color: var(--color-input-border);
+}

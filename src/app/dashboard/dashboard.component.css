@@ -1,0 +1,16 @@
+.Container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--color-background);
+   min-height: 100vh;
+   gap: 25px;
+
+}
+
+.Container-header {
+  justify-content: center;
+
+  max-width: 480px;
+  width: 100%;
+}

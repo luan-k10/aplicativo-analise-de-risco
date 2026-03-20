@@ -1,0 +1,32 @@
+
+
+.Container-recent {
+  display: flex;
+ max-width: 400px;
+  width: 88%;
+  margin: auto;
+  justify-content:space-between;
+  align-items: center;
+  padding: 20px 5px;
+
+}
+
+.Container-recent h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 500;
+
+}
+
+.Container-recent p {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.Container-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
