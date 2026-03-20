@@ -10,8 +10,14 @@
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   gap: 15px;
+  transition: transform 0.1s ease;
+  touch-action: manipulation;
 }
 
+.Container:active {
+  transform: scale(0.98);
+
+}
 
 
 .Container-icone .material-symbols-outlined {
