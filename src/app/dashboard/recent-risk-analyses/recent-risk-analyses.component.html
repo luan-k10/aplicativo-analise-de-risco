@@ -1,11 +1,12 @@
-<div class="Container">
+<div class="Container" [class.expandido]="expandido">
   <div class="Container-recent">
-    <h3>Análises Recentes</h3>
-    <p>Ver todas</p>
+    <h3 >Análises Recentes</h3>
+    <p (click)="toggleExpand()"  [class.active]="expandido"> {{ expandido ? 'Ver menos' : 'Ver todas' }}</p>
   </div>
   <div class="Container-card">
     <app-card-risk-analyses></app-card-risk-analyses>
     <app-card-risk-analyses></app-card-risk-analyses>
-
+     <app-card-risk-analyses></app-card-risk-analyses>
+    <app-card-risk-analyses></app-card-risk-analyses>
   </div>
 </div>

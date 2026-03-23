@@ -15,4 +15,6 @@ import { InsightComponent } from './insight/insight.component';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-export class dashboardComponent { }
+export class dashboardComponent {
+
+ }

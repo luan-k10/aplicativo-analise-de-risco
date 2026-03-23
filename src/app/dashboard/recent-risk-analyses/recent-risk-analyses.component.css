@@ -1,14 +1,40 @@
 
 
+.Container.expandido {
+  max-height: 1000px;
+}
+
+.Container {
+  max-height: 220px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
 .Container-recent {
   display: flex;
+   position: relative;
  max-width: 400px;
   width: 88%;
   margin: auto;
   justify-content:space-between;
   align-items: center;
   padding: 20px 5px;
+  z-index: 1;
+}
 
+.Container p::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  background-color: rgba(97, 97, 97, 0.08);
+  transform: scale(0);
+
+  z-index: 0;
+}
+
+.Container p.active::after {
+  transform: scale(1);
 }
 
 .Container-recent h3 {
@@ -19,10 +45,13 @@
 }
 
 .Container-recent p {
+   position: relative;
+  z-index: 1;
   font-size: 0.9rem;
   color: var(--color-primary);
   font-weight: 500;
   opacity: 0.8;
+  padding: 7px;
 }
 
 .Container-card {

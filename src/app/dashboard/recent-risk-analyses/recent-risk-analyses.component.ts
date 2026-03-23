@@ -7,4 +7,10 @@ import { CardRiskAnalysesComponent } from "./card-risk-analyses/card-risk-analys
   templateUrl: './recent-risk-analyses.component.html',
   styleUrl: './recent-risk-analyses.component.css',
 })
-export class RecentRiskAnalysesComponent {}
+export class RecentRiskAnalysesComponent {
+    expandido = false;
+
+toggleExpand() {
+  this.expandido = !this.expandido;
+}
+}

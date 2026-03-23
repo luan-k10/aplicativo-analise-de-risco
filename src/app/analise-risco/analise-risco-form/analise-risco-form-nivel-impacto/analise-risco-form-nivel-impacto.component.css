@@ -1,0 +1,47 @@
+.Container {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+
+}
+
+.Container-titulo {
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  padding: 0 16px;
+}
+
+.Container-titulo span {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.Container-option {
+  display: flex;
+  justify-content: center;
+
+}
+
+.flex-1,
+.flex-2 {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+}
+
+.flex-1 div,
+.flex-2 div {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-background-light);
+  padding: 20px 68.5px;
+  border-radius: 5px;
+  color: var(--color-primary);
+  font-weight: 700;
+}

@@ -4,6 +4,7 @@
   --color-background: #f9f9f9;
   --color-input-background: #ffffff;
 
+  --color-background-light: rgba(145, 145, 145, 0.096);
   --color-input-border: #D9DEE3;
   --color-text: rgb(39, 39, 39);
   --color-text-light: #6B7280;
@@ -25,7 +26,7 @@ body {
   -webkit-tap-highlight-color: transparent;
     user-select: none;
   -webkit-user-select: none;
-  padding-top: 70px;
+    padding-top: 70px;
 }
 
 .material-symbols-outlined {

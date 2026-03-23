@@ -1,0 +1,23 @@
+.Container {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-input-background);
+  gap: 15px;
+  padding: 5px 15px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+.Container span {
+  font-size: 1.5rem;
+  padding: 10px;
+  color: var(--color-primary-hover);
+}
+
+.Container p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 10px;
+  color: var(--color-primary-hover);
+}
