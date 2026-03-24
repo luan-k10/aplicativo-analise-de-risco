@@ -45,6 +45,10 @@ mat-select {
 
 }
 
+mat-mdc-form-field-infix{
+  padding: 0 !important;
+}
+
 mat-option {
   padding: 0 20px;
 
@@ -69,3 +73,4 @@ label .material-symbols-outlined {
   z-index: 1000 !important;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
 }
+

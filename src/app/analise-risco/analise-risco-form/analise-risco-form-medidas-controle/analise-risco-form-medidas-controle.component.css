@@ -15,7 +15,7 @@
 .field-group label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-weight: 500;
   color: var(--color-primary);
   font-size: 1rem;

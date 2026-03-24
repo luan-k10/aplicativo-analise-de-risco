@@ -1,6 +1,6 @@
 .Container {
   max-width: 400px;
-  width: 100%;
+  width: 98%;
   margin: auto;
   padding: 10px;
 }
@@ -13,7 +13,7 @@
 }
 
 .Container p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-text-light);
   padding: 5px 10px;
   line-height: 28px;

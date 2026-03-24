@@ -36,8 +36,44 @@ body {
     'GRAD' 0,
     'opsz' 48
 }
+/*Angular form*/
+.mat-mdc-form-field-infix {
+  padding: 0 !important;
+}
 
-app-navbar
-.navbar {
 
+/*Angular data*/
+.mat-calendar {
+  background: var(--color-background);
+  color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+  border-radius: 5px;
+}
+
+.mat-calendar-header {
+  color: var(--color-primary-hover);
+  font-weight: 600;
+}
+
+.mat-calendar-body-cell-content {
+  border-radius: 6px;
+}
+
+.mat-calendar-body-selected {
+  background: var(--color-primary-hover) !important;
+  color: #fff !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border: 1px solid var(--color-primary-hover);
+}
+
+.mat-calendar-body-disabled {
+
+  opacity: 0.4;
+}
+
+.custom-date .mat-mdc-text-field-wrapper {
+  background-color: var(--color-background-light) !important;
+  border-radius: 5px;
 }

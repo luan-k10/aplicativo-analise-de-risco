@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-
 }
 
 app-analise-risco-form-local-area,
@@ -51,7 +49,8 @@ app-analise-risco-form-responsavel-equipe {
 
   .material-symbols-outlined {
     font-size: 1.2rem;
-    font-variation-settings: 'FILL' 0, 'wght' 500;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 500;
   }
-
 }

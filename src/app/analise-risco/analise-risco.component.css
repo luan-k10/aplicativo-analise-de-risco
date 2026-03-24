@@ -1,13 +1,15 @@
-.Container {
 
+.Container {
   max-width: 400px;
-  width: 90%;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
+  padding-top: 40px;
 }
 
 .Container-form {
   background-color: var(--color-input-background);
   border-radius: 10px;
   padding: 35px 5px 15px 5px;
+  margin: 20px;
 }

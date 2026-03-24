@@ -1,12 +1,15 @@
 .Container {
-  display: flex;
+  position: fixed;
+  flex-direction: row;
   align-items: center;
   background-color: var(--color-input-background);
+  top: 0;
+  left: 0;
   gap: 15px;
-  padding: 5px 15px;
-  max-width: 400px;
+  padding: 0 16px;
   width: 100%;
-  margin: auto;
+  height: 70px;
+  z-index: 1000;
 }
 
 .Container span {
