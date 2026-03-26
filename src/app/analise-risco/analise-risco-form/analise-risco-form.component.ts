@@ -1,5 +1,5 @@
 import { AnaliseRiscoFormResponsavelEquipeComponent } from './analise-risco-form-responsavel-equipe/analise-risco-form-responsavel-equipe.component';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component} from '@angular/core';
 import { AnaliseRiscoFormCategoriaComponent } from './analise-risco-form-categoria/analise-risco-form-categoria.component';
 import { AnaliseRiscoFormNomeRiscoComponent } from './analise-risco-form-nome-risco/analise-risco-form-nome-risco.component';
 import { AnaliseRiscoFormLocalAreaComponent } from './analise-risco-form-local-area/analise-risco-form-local-area.component';
@@ -19,6 +19,5 @@ import { AnaliseRiscoFormDataRevisaoComponent } from './analise-risco-form-data-
     AnaliseRiscoFormMedidasControleComponent, AnaliseRiscoFormDataAnaliseComponent, AnaliseRiscoFormDataRevisaoComponent],
   templateUrl: './analise-risco-form.component.html',
   styleUrl: './analise-risco-form.component.css',
-  encapsulation: ViewEncapsulation.None
 })
 export class AnaliseRiscoFormComponent { }

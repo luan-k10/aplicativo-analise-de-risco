@@ -3,8 +3,9 @@
   flex-direction: column;
   margin: auto;
   gap: 16px;
+  padding: 0 16px;
   max-width: 400px;
-  width: 91%;
+  width: 100%;
 }
 
 .field-group label {
@@ -47,7 +48,8 @@
 }
 
 ::ng-deep .custom-date .mat-datepicker-toggle {
-  color: var(--color-primary); /* corrigido */
+  color: var(--color-primary);
+  /* corrigido */
   opacity: 0.5;
   padding: 0 10px;
 }

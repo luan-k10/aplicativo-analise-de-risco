@@ -1,5 +1,6 @@
-.Container {
+.Container-nav {
   position: fixed;
+  display: flex;
   flex-direction: row;
   align-items: center;
   background-color: var(--color-input-background);
@@ -12,13 +13,13 @@
   z-index: 1000;
 }
 
-.Container span {
+.Container-nav span {
   font-size: 1.5rem;
   padding: 10px;
   color: var(--color-primary-hover);
 }
 
-.Container p {
+.Container-nav p {
   font-size: 1.4rem;
   font-weight: 500;
   padding: 10px;

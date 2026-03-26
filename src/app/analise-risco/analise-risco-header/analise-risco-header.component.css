@@ -1,8 +1,8 @@
 .Container {
   max-width: 400px;
-  width: 98%;
+  width: 100%;
   margin: auto;
-  padding: 10px;
+  padding-bottom: 20px;
 }
 
 .Container h1 {

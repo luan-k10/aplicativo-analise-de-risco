@@ -2,7 +2,7 @@
   --color-primary: #173F3F;
   --color-primary-hover: #1F5A5A;
   --color-background: #f9f9f9;
-  --color-input-background: #ffffff;
+  --color-input-background: white;
 
   --color-background-light: rgba(145, 145, 145, 0.096);
   --color-input-border: #D9DEE3;
@@ -44,7 +44,7 @@ body {
 
 /*Angular data*/
 .mat-calendar {
-  background: var(--color-background);
+  background: var( --color-input-background);
   color: #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
   border-radius: 5px;
