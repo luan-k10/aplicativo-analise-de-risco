@@ -6,7 +6,7 @@ import { AnaliseRiscoFormProbabilidadeComponent } from "./analise-risco-form/ana
 import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-analise-risco',
-  imports: [NavbarComponent, AnaliseRiscoHeaderComponent, AnaliseRiscoHeaderNavComponent, AnaliseRiscoFormComponent, AnaliseRiscoFormProbabilidadeComponent],
+  imports: [AnaliseRiscoHeaderComponent, AnaliseRiscoHeaderNavComponent, AnaliseRiscoFormComponent],
   templateUrl: './analise-risco.component.html',
   styleUrl: './analise-risco.component.css',
 })

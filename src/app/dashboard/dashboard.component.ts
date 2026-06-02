@@ -10,11 +10,10 @@ import { InsightComponent } from './insight/insight.component';
 @Component({
   selector: 'app-dashboard',
   imports: [NavbarComponent, DashboardHeaderComponent, AnaliseRiscoCardComponent, AutorizarAnaliseRiscoCardComponent,
-     AddEquipeCardComponent, RecentRiskAnalysesComponent,
-      CardRiskAnalysesComponent, InsightComponent],
+     AddEquipeCardComponent, RecentRiskAnalysesComponent, InsightComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-export class dashboardComponent {
+export class DashboardComponent {
 
  }
