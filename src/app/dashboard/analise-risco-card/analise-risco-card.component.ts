@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-analise-risco-card',
-  imports: [],
   templateUrl: './analise-risco-card.component.html',
-  styleUrl: './analise-risco-card.component.css',
+  styleUrls: ['./analise-risco-card.component.css'],
+  imports: [RouterLink], 
+  standalone: true 
 })
-export class AnaliseRiscoCardComponent {}
+export class AnaliseRiscoCardComponent {
+}
