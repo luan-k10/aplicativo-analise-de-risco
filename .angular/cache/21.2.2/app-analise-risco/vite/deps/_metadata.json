@@ -1,34 +1,58 @@
 {
-  "hash": "f083f394",
-  "configHash": "6ac12761",
+  "hash": "988602b6",
+  "configHash": "41459690",
   "lockfileHash": "7ef9fd2c",
-  "browserHash": "a11bd57f",
+  "browserHash": "ee8e24bc",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "43b677be",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "ae06e609",
+      "fileHash": "13d8a27e",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "a1d97c6d",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "4fa3964d",
+      "fileHash": "cdbb3785",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "923a33be",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "b19bf4eb",
+      "fileHash": "b5bc772b",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-YNVTYBEV": {
-      "file": "chunk-YNVTYBEV.js"
+    "chunk-TIGVK2OQ": {
+      "file": "chunk-TIGVK2OQ.js"
     },
-    "chunk-XCBUDJG3": {
-      "file": "chunk-XCBUDJG3.js"
+    "chunk-QCG7G3H5": {
+      "file": "chunk-QCG7G3H5.js"
+    },
+    "chunk-W3USOL2E": {
+      "file": "chunk-W3USOL2E.js"
+    },
+    "chunk-KGK35CSM": {
+      "file": "chunk-KGK35CSM.js"
     }
   }
 }

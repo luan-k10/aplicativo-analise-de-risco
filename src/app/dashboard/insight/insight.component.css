@@ -1,0 +1,33 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 88%;
+  background-color: rgb(241, 250, 255);
+  margin: auto;
+  border-radius: 17px;
+}
+
+.Container-insight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 25px;
+
+}
+
+.Container-insight h3 {
+  font-size: 0.9rem;
+  color:  rgb(0 36 68);
+  font-weight: 500;
+  text-transform: uppercase;
+
+}
+
+.Container-insight p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-bottom: 5px;
+  line-height: 1.5;
+  color: rgb(43 72 106);
+}

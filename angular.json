@@ -20,7 +20,11 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
+<<<<<<< HEAD
               "src/assets",
+=======
+              "src/assets/",
+>>>>>>> dddfbc5b313db5b311fe68a055d105661a6edad7
               {
                 "glob": "**/*",
                 "input": "public",

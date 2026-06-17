@@ -1,0 +1,15 @@
+<div class="Container">
+<div class="Container-titulo">
+    <span class="material-symbols-outlined"> query_stats </span>
+    <p>Probabilidade</p>
+  </div>
+
+<div class="Container-option">
+
+  <div class="grid">
+    <div (click)="selectProbabilidade('Baixa')" [class.selected]="selectedProbabilidade === 'Baixa'">Baixa</div>
+    <div (click)="selectProbabilidade('Media')" [class.selected]="selectedProbabilidade === 'Media'">Media</div>
+    <div (click)="selectProbabilidade('Alta')" [class.selected]="selectedProbabilidade === 'Alta'">Alta</div>
+  </div>
+</div>
+</div>

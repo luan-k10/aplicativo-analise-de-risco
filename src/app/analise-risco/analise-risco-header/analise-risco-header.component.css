@@ -1,0 +1,20 @@
+.Container {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.Container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 5px 10px;
+}
+
+.Container p {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  padding: 5px 10px;
+  line-height: 28px;
+}

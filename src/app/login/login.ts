@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [RouterModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrls: ['./login.css']
 })
-export class LoginComponent {}
+export class LoginComponent {
+  constructor(private router: Router) {}
+
+  fazerLogin() {
+    this.router.navigate(['/dashboard']);
+  }
+}

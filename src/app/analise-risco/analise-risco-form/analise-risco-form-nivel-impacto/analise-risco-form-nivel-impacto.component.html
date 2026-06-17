@@ -1,0 +1,16 @@
+<div class="Container">
+<div class="Container-titulo">
+    <span class="material-symbols-outlined"> priority_high </span>
+    <p>Nível de Impacto</p>
+  </div>
+
+<div class="Container-option">
+
+  <div class="grid">
+    <div (click)="selectImpacto('Baixo')" [class.selected]="selectedImpacto === 'Baixo'">Baixo</div>
+    <div (click)="selectImpacto('Médio')" [class.selected]="selectedImpacto === 'Médio'">Médio</div>
+    <div (click)="selectImpacto('Alto')" [class.selected]="selectedImpacto === 'Alto'">Alto</div>
+    <div (click)="selectImpacto('Crítico')" [class.selected]="selectedImpacto === 'Crítico'">Crítico</div>
+  </div>
+</div>
+</div>

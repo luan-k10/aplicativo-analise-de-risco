@@ -1,0 +1,39 @@
+.Container-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-input-background);
+  top: 0;
+  left: 0;
+  gap: 15px;
+  padding: 0 16px;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.Container-nav > div {
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.Container-nav > p {
+  pointer-events: none;
+}
+
+.Container-nav span {
+  font-size: 1.5rem;
+  color: var(--color-primary-hover);
+}
+
+.Container-nav p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 10px;
+  color: var(--color-primary-hover);
+}
