@@ -1,0 +1,427 @@
+<app-header [titulo]="somenteLeitura ? 'Análise ' + a.codigo : 'Criar análise de risco'" />
+
+<div class="page">
+  <div class="page-content">
+    @if (naoEncontrada()) {
+      <p class="lista-vazia">Análise não encontrada.</p>
+      <a routerLink="/analise/buscar" class="btn-secondary">Voltar para a busca</a>
+    } @else if (salva(); as s) {
+      <div class="sucesso-box">
+        <span class="material-symbols-outlined grande">task_alt</span>
+        <h1 class="page-title">Análise salva!</h1>
+        <p>Código da análise:</p>
+        <p class="codigo">{{ s.codigo }}</p>
+        <p class="texto-suave">Aguardando autorização.</p>
+        <div class="acoes-fim">
+          <a [routerLink]="['/analise', s.codigo]" class="btn-secondary">Visualizar</a>
+          <button type="button" class="btn-secondary" (click)="novaAnalise()">Nova análise</button>
+          <a routerLink="/home" class="btn-secondary">Início</a>
+        </div>
+      </div>
+    } @else {
+      <div class="doc-titulo">
+        <div>
+          <strong>FORMULÁRIO 2 – ANÁLISE DE RISCO LOCAL</strong>
+          <small>PE-SGS-0028 · Rev.017</small>
+        </div>
+        @if (somenteLeitura) {
+          <span [class]="'badge badge-' + a.status">{{ rotulosStatus[a.status] }}</span>
+        }
+      </div>
+
+      @if (somenteLeitura) {
+        <p class="meta">
+          Criada em {{ a.criadoEm | date: 'dd/MM/yyyy HH:mm' }}
+          @if (a.avaliadoEm) {
+            · {{ rotulosStatus[a.status] }} em {{ a.avaliadoEm | date: 'dd/MM/yyyy HH:mm' }}
+            @if (a.avaliadoPor) {
+              (mat. {{ a.avaliadoPor }})
+            }
+          }
+        </p>
+      }
+
+      @if (erros().length) {
+        <div class="msg-erro caixa-erro" role="alert">
+          <strong>Corrija antes de salvar:</strong>
+          <ul>
+            @for (e of erros(); track e) {
+              <li>{{ e }}</li>
+            }
+          </ul>
+        </div>
+      }
+
+      <fieldset [disabled]="somenteLeitura">
+        <!-- Cabeçalho -->
+        <section class="secao">
+          <label class="check destaque">
+            <input type="checkbox" [(ngModel)]="a.cabecalho.direitoTrabalhoSeguro" />
+            DIREITO AO TRABALHO SEGURO: S
+          </label>
+          @if (a.cabecalho.direitoTrabalhoSeguro) {
+            <label class="campo">Motivo <input [(ngModel)]="a.cabecalho.motivo" /></label>
+          }
+          <div class="grade">
+            <label class="campo">Empresa <input [(ngModel)]="a.cabecalho.empresa" /></label>
+            <label class="campo">Data <input type="date" [(ngModel)]="a.cabecalho.data" /></label>
+          </div>
+          <label class="campo"
+            >Serviço <textarea rows="2" [(ngModel)]="a.cabecalho.servico"></textarea>
+          </label>
+          <label class="campo">Local <input [(ngModel)]="a.cabecalho.local" /></label>
+        </section>
+
+        <!-- 1 -->
+        <section class="secao">
+          <h2><span class="num">1</span> CONDIÇÕES ESPECIAIS</h2>
+          <p class="dica">Marque as condições presentes na atividade e confirme as medidas.</p>
+          @for (c of condicoes; track c.id; let i = $index) {
+            <div class="condicao" [class.marcada]="a.condicoes[i].marcado">
+              <label class="check titulo-cond">
+                <input type="checkbox" [(ngModel)]="a.condicoes[i].marcado" />
+                {{ c.titulo }}
+              </label>
+              @if (a.condicoes[i].marcado) {
+                <div class="cond-corpo">
+                  @if (c.extra === 'bloqueio') {
+                    <p class="sub">Fontes de energia:</p>
+                    <div class="checks-grade">
+                      @for (f of fontesEnergia; track f; let k = $index) {
+                        <label class="check">
+                          <input type="checkbox" [(ngModel)]="a.extrasCondicoes.fontesEnergia[k]" />
+                          {{ f }}
+                        </label>
+                      }
+                    </div>
+                  }
+                  @for (item of c.itens; track item; let j = $index) {
+                    <label class="check">
+                      <input type="checkbox" [(ngModel)]="a.condicoes[i].itens[j]" />
+                      {{ item }}
+                    </label>
+                  }
+                  @switch (c.extra) {
+                    @case ('altura') {
+                      <div class="linha-sn">
+                        <span>Atividade rotineira?</span>
+                        <app-sim-nao [(valor)]="a.extrasCondicoes.alturaRotineira" />
+                      </div>
+                      @if (a.extrasCondicoes.alturaRotineira === 'N') {
+                        <p class="alerta">Se não, solicitar emissão da Permissão de Trabalho.</p>
+                      }
+                      <div class="linha-sn">
+                        <span>Supervisão presencial?</span>
+                        <app-sim-nao [(valor)]="a.extrasCondicoes.alturaSupervisaoPresencial" />
+                      </div>
+                      @if (a.extrasCondicoes.alturaSupervisaoPresencial === 'N') {
+                        <label class="campo">
+                          Se não, estabelecer a forma
+                          <input [(ngModel)]="a.extrasCondicoes.alturaFormaSupervisao" />
+                        </label>
+                      }
+                    }
+                    @case ('quimicos') {
+                      <div class="linha-sn">
+                        <span>Atividade rotineira com CAL?</span>
+                        <app-sim-nao [(valor)]="a.extrasCondicoes.quimicosRotineiraCal" />
+                      </div>
+                      @if (a.extrasCondicoes.quimicosRotineiraCal === 'N') {
+                        <p class="alerta">Se não, preencher Permissão de Trabalho.</p>
+                      }
+                    }
+                    @case ('confinado') {
+                      <label class="check">
+                        <input
+                          type="radio"
+                          name="classe-confinado"
+                          value="1"
+                          [(ngModel)]="a.extrasCondicoes.espacoConfinadoClasse"
+                        />
+                        Classe 1 (SESMT da ArcelorMittal)
+                      </label>
+                      <label class="check">
+                        <input
+                          type="radio"
+                          name="classe-confinado"
+                          value="2"
+                          [(ngModel)]="a.extrasCondicoes.espacoConfinadoClasse"
+                        />
+                        Classe 2 (empregado treinado)
+                      </label>
+                    }
+                    @case ('calor') {
+                      <div class="ciclo">
+                        <span>Ciclo de revezamento:</span>
+                        <input class="input curto" [(ngModel)]="a.extrasCondicoes.cicloTrabalho" />
+                        <span>trabalho x</span>
+                        <input class="input curto" [(ngModel)]="a.extrasCondicoes.cicloDescanso" />
+                        <span>descanso</span>
+                      </div>
+                    }
+                  }
+                </div>
+              }
+            </div>
+          }
+        </section>
+
+        <!-- 2 -->
+        <section class="secao">
+          <h2><span class="num">2</span> PREPARAÇÃO E RECURSOS</h2>
+          @for (p of preparacao; track p.pergunta; let i = $index) {
+            <div class="pergunta">
+              <div class="linha-sn">
+                <span>{{ p.pergunta }}</span>
+                <app-sim-nao [(valor)]="a.preparacao[i].resposta" />
+              </div>
+              @if (i === indiceIcar) {
+                <div class="linha-sn">
+                  <span>Plano de içamento?</span>
+                  <app-sim-nao [(valor)]="a.planoIcamento" />
+                </div>
+              }
+              <input class="input" [placeholder]="p.acao" [(ngModel)]="a.preparacao[i].acao" />
+            </div>
+          }
+        </section>
+
+        <!-- 3 -->
+        <section class="secao">
+          <h2><span class="num">3</span> CHECK-LISTS DE PRÉ-USO</h2>
+          <p class="sub">Padrão</p>
+          <div class="checks-grade">
+            @for (c of checklistPadrao; track c; let i = $index) {
+              <label class="check">
+                <input type="checkbox" [(ngModel)]="a.checklistPadrao[i]" /> {{ c }}
+              </label>
+            }
+          </div>
+          <p class="sub">Específico</p>
+          <div class="checks-grade">
+            @for (c of checklistEspecifico; track c; let i = $index) {
+              <label class="check">
+                <input type="checkbox" [(ngModel)]="a.checklistEspecifico[i]" /> {{ c }}
+              </label>
+            }
+          </div>
+          @if (a.checklistEspecifico[indiceOutros]) {
+            <label class="campo">Outros (quais?) <input [(ngModel)]="a.checklistOutros" /></label>
+          }
+        </section>
+
+        <!-- 4 -->
+        <section class="secao">
+          <h2><span class="num">4</span> RESPONSÁVEL PELA EXECUÇÃO</h2>
+          <div class="grade">
+            <label class="campo"
+              >Nome/Assinatura <input [(ngModel)]="a.responsavelExecucao.nome"
+            /></label>
+            <label class="campo"
+              >Matrícula <input [(ngModel)]="a.responsavelExecucao.matricula"
+            /></label>
+          </div>
+        </section>
+
+        <!-- 5 -->
+        <section class="secao">
+          <h2><span class="num">5</span> CIÊNCIA DO RESPONSÁVEL PELA ÁREA</h2>
+          <div class="opcoes">
+            <label class="check">
+              <input
+                type="radio"
+                name="empresa-area"
+                value="ArcelorMittal"
+                [(ngModel)]="a.cienciaArea.empresa"
+              />
+              ArcelorMittal
+            </label>
+            <label class="check">
+              <input
+                type="radio"
+                name="empresa-area"
+                value="Contratada"
+                [(ngModel)]="a.cienciaArea.empresa"
+              />
+              Contratada
+            </label>
+          </div>
+          <label class="campo"
+            >Nome/Assinatura/ID do rádio <input [(ngModel)]="a.cienciaArea.nome"
+          /></label>
+          <div class="grade">
+            <label class="campo">Matrícula <input [(ngModel)]="a.cienciaArea.matricula" /></label>
+            <label class="campo">Ramal <input [(ngModel)]="a.cienciaArea.ramal" /></label>
+          </div>
+          <div class="grade tres">
+            <label class="campo">Data <input type="date" [(ngModel)]="a.cienciaArea.data" /></label>
+            <label class="campo"
+              >Hora início <input type="time" [(ngModel)]="a.cienciaArea.horaInicio"
+            /></label>
+            <label class="campo"
+              >Hora fim <input type="time" [(ngModel)]="a.cienciaArea.horaFim"
+            /></label>
+          </div>
+        </section>
+
+        <!-- 6 -->
+        <section class="secao">
+          <h2><span class="num">6</span> EPI E EPC</h2>
+          @for (g of epiEpc; track g.titulo; let gi = $index) {
+            <p class="sub">{{ g.titulo }}</p>
+            <div class="checks-grade">
+              @for (item of g.itens; track item.rotulo; let ii = $index) {
+                <div>
+                  <label class="check">
+                    <input type="checkbox" [(ngModel)]="a.epi[gi][ii].marcado" /> {{ item.rotulo }}
+                  </label>
+                  @if (item.detalhe && a.epi[gi][ii].marcado) {
+                    <input
+                      class="input detalhe"
+                      [placeholder]="item.detalhe"
+                      [(ngModel)]="a.epi[gi][ii].detalhe"
+                    />
+                  }
+                </div>
+              }
+            </div>
+          }
+        </section>
+
+        <!-- 7 -->
+        <section class="secao">
+          <h2><span class="num">7</span> EMERGÊNCIA / RESGATE</h2>
+          <div class="linha-sn">
+            <span>A equipe conhece a rota de fuga?</span>
+            <app-sim-nao [(valor)]="a.emergencia.rotaFuga" />
+          </div>
+          <div class="linha-sn">
+            <span>
+              Necessita de resgate especial?
+              <small class="texto-suave"
+                >(espaço confinado, trabalho em altura, locais de difícil acesso)</small
+              >
+            </span>
+            <app-sim-nao [(valor)]="a.emergencia.resgateEspecial" />
+          </div>
+          <div class="emergencia">
+            <strong>EMERGÊNCIA, LIGUE:</strong>
+            @for (t of telefones; track t.local) {
+              <a [href]="'tel:' + t.tel">
+                <span class="material-symbols-outlined">call</span>
+                {{ t.local }}: {{ t.telefone }} / {{ t.radio }}
+              </a>
+            }
+          </div>
+        </section>
+
+        <!-- 8 -->
+        <section class="secao">
+          <h2><span class="num">8</span> MEIO AMBIENTE</h2>
+          @for (g of meioAmbiente; track g.titulo; let gi = $index) {
+            <div class="pergunta">
+              <div class="linha-sn">
+                <strong>{{ g.titulo }}</strong>
+                <app-sim-nao [(valor)]="a.meioAmbiente[gi].resposta" />
+              </div>
+              @if (a.meioAmbiente[gi].resposta === 'S') {
+                @for (item of g.itens; track item; let ii = $index) {
+                  <label class="check">
+                    <input type="checkbox" [(ngModel)]="a.meioAmbiente[gi].itens[ii]" /> {{ item }}
+                  </label>
+                }
+              }
+            </div>
+          }
+        </section>
+
+        <!-- 9 -->
+        <section class="secao">
+          <h2><span class="num">9</span> RISCOS LOCAIS</h2>
+          <p class="sub">Há risco de...</p>
+          @for (r of riscosLocais; track r; let i = $index) {
+            <div class="pergunta">
+              <div class="linha-sn">
+                <span
+                  ><b>{{ i + 1 }}.</b> {{ r }}</span
+                >
+                <app-sim-nao [(valor)]="a.riscos[i].resposta" />
+              </div>
+              @if (a.riscos[i].resposta === 'S' || a.riscos[i].acao) {
+                <input class="input" placeholder="AÇÃO" [(ngModel)]="a.riscos[i].acao" />
+              }
+            </div>
+          }
+          <p class="sub">Reavaliação dos itens</p>
+          <div class="reavaliacoes">
+            @for (r of a.reavaliacoes; track $index; let i = $index) {
+              <input
+                class="input"
+                [attr.aria-label]="'Reavaliação ' + (i + 1)"
+                [(ngModel)]="a.reavaliacoes[i]"
+              />
+            }
+          </div>
+          <p class="nota">
+            NOTA: O RESPONSÁVEL PELA EXECUÇÃO DEVE INFORMAR AOS ITENS REAVALIADOS PARA TODA A
+            EQUIPE.
+          </p>
+          <label class="campo"
+            >Observações <textarea rows="3" [(ngModel)]="a.observacoes"></textarea>
+          </label>
+        </section>
+
+        <!-- 10 -->
+        <section class="secao">
+          <h2><span class="num">10</span> ASSINATURA/CIÊNCIA DOS RISCOS E MEDIDAS DE CONTROLE</h2>
+          <p class="dica">E demais informações desse documento – executantes/envolvidos.</p>
+          @if (!somenteLeitura) {
+            <button type="button" class="btn-secondary no-print" (click)="preencherComEquipe()">
+              <span class="material-symbols-outlined">group</span> Preencher com a equipe
+            </button>
+          }
+          <div class="executantes">
+            <div class="exec-cab">
+              <span>#</span><span>Nome/Assinatura</span><span>Matrícula</span><span>Ciente?</span>
+            </div>
+            @for (e of a.executantes; track $index; let i = $index) {
+              @if (!somenteLeitura || e.nome) {
+                <div class="exec-linha">
+                  <span class="exec-num">{{ i + 1 }}</span>
+                  <input
+                    class="input"
+                    [attr.aria-label]="'Executante ' + (i + 1)"
+                    [(ngModel)]="e.nome"
+                  />
+                  <input
+                    class="input"
+                    [attr.aria-label]="'Matrícula ' + (i + 1)"
+                    [(ngModel)]="e.matricula"
+                  />
+                  <app-sim-nao [(valor)]="e.ciente" />
+                </div>
+              }
+            }
+          </div>
+        </section>
+      </fieldset>
+
+      <p class="regras-ouro">
+        É OBRIGATÓRIO O CUMPRIMENTO DE TODAS AS REGRAS DE OURO QUE SALVAM VIDAS, CUMPRIR AS REGRAS
+        DE OURO É CONDIÇÃO DE EMPREGO.
+        <small>VERSÃO C</small>
+      </p>
+
+      <div class="acoes-fim no-print">
+        @if (somenteLeitura) {
+          <a routerLink="/analise/buscar" class="btn-secondary">Voltar</a>
+          <button type="button" class="btn-secondary" (click)="imprimir()">
+            <span class="material-symbols-outlined">print</span> Imprimir
+          </button>
+        } @else {
+          <button type="button" class="btn-primary" (click)="salvar()">Salvar análise</button>
+        }
+      </div>
+    }
+  </div>
+</div>

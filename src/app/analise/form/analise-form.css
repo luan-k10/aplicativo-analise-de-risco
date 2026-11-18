@@ -1,0 +1,275 @@
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.doc-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.doc-titulo small,
+.texto-suave,
+.meta,
+.dica {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+.meta {
+  margin-bottom: 12px;
+}
+
+.caixa-erro {
+  background: #fdecec;
+  border: 1px solid #f3c2c2;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.caixa-erro ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.secao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.secao h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--laranja);
+  font-size: 0.85rem;
+}
+
+.sub {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 12px 0 6px;
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.check input {
+  margin-top: 3px;
+  accent-color: var(--laranja-escuro);
+}
+
+.destaque {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 10px;
+}
+
+.grade.tres {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.checks-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0 12px;
+}
+
+.condicao {
+  border-top: 1px solid #f1e6dc;
+  padding: 6px 0;
+}
+
+.condicao.marcada {
+  background: var(--pessego-claro);
+  margin: 0 -14px;
+  padding: 6px 14px;
+}
+
+.titulo-cond {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.cond-corpo {
+  padding-left: 24px;
+}
+
+.pergunta {
+  border-top: 1px solid #f1e6dc;
+  padding: 8px 0;
+}
+
+.linha-sn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.pergunta .input {
+  margin-top: 4px;
+}
+
+.alerta {
+  color: #8a5a00;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.ciclo,
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.input.curto {
+  width: 80px;
+}
+
+.input.detalhe {
+  margin: 0 0 6px 24px;
+  width: calc(100% - 24px);
+}
+
+.emergencia {
+  margin-top: 10px;
+  background: #fdecec;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.emergencia a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9b1c1c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reavaliacoes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.nota {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.executantes {
+  margin-top: 10px;
+}
+
+.exec-cab,
+.exec-linha {
+  display: grid;
+  grid-template-columns: 22px 1fr 110px auto;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.exec-cab {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+.exec-num {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.regras-ouro {
+  background: var(--laranja);
+  border-radius: var(--raio);
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.regras-ouro small {
+  display: block;
+  margin-top: 4px;
+}
+
+.acoes-fim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.sucesso-box {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.sucesso-box .grande {
+  font-size: 64px;
+  color: var(--verde);
+}
+
+.codigo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 6px 0;
+}
+
+@media (max-width: 480px) {
+  .grade.tres {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .exec-cab,
+  .exec-linha {
+    grid-template-columns: 18px 1fr 84px auto;
+  }
+}
