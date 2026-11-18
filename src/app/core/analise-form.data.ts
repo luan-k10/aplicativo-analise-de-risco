@@ -358,6 +358,10 @@ export const TOTAL_REAVALIACOES = 5;
 export const TOTAL_EXECUTANTES = 16;
 
 export const TELEFONES_EMERGENCIA = [
-  { local: 'USINA', telefone: '(27) 3348-1122', tel: '+552733481122', radio: 'Rádio Bombeiro' },
-  { local: 'TPS', telefone: '(27) 3348-3044', tel: '+552733483044', radio: 'Rádio Ambulância' },
+  {
+    local: 'Telefone',
+    telefone: '(00) 0000-0000',
+    tel: '0000000000',
+    radio: 'Rádio de emergência',
+  },
 ];
