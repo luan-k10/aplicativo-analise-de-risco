@@ -15,11 +15,10 @@
 
 <div align="center">
   
-  ![PHP](https://img.shields.io/badge/-php-0D1117?style=for-the-badge&logo=php&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![Angular](https://img.shields.io/badge/-Angular-0D1117?style=for-the-badge&logo=angular&labelColor=0D1117&textColor=0D1117)&nbsp;
+  ![TypeScript](https://img.shields.io/badge/-TypeScript-0D1117?style=for-the-badge&logo=typescript&labelColor=0D1117&textColor=0D1117)&nbsp;
   ![HTML](https://img.shields.io/badge/-HTML-0D1117?style=for-the-badge&logo=html5&labelColor=0D1117&textColor=0D1117)&nbsp;
-  ![CSS](https://img.shields.io/badge/-CSS-0D1117?style=for-the-badge&logo=css&labelColor=0D1117&textColor=0D1117)&nbsp;
-  ![JavaScript](https://img.shields.io/badge/-JavaScript-0D1117?style=for-the-badge&logo=javascript&labelColor=0D1117&textColor=0D1117)&nbsp;
-  ![SQL](https://img.shields.io/badge/-Sql-0D1117?style=for-the-badge&logo=SQL&labelColor=0D1117&textColor=0D1117)&nbsp;  
+  ![CSS](https://img.shields.io/badge/-CSS-0D1117?style=for-the-badge&logo=css&labelColor=0D1117&textColor=0D1117)&nbsp;  
   
 </div>
 
@@ -44,6 +43,37 @@
 - Construir um protótipo funcional baseado em análises de risco reais, seguindo o padrão estabelecido pelas normas regulamentadoras;
 
 - Tornar o software compatível com bancos de dados previamente construídos pelas empresas.
+
+<br>
+
+---
+
+<br>
+
+### 📱 Funcionalidades:
+
+<br>
+
+- **Login / Cadastro** de usuários (matrícula ou e-mail + senha; "Entrar com Outlook" é simulado).
+- **Criar análise de risco**: versão digital do formulário PE-SGS-0028 (Formulário 2 – Análise de Risco Local), com todas as seções (condições especiais, preparação, check-lists, EPI/EPC, emergência, meio ambiente, riscos locais e assinaturas). Cada análise recebe um código (ex.: `1234-569`).
+- **Buscar análise de risco** por código, executor ou matrícula e visualizá-la/imprimi-la.
+- **Adicionar equipe**: cadastro dos membros usados para preencher as assinaturas.
+- **Autorizar análise de risco**: aprovar ou rejeitar análises pendentes.
+
+> Ainda não há backend: os dados ficam no `localStorage` do navegador. Os serviços em `src/app/core` concentram o acesso aos dados para facilitar a troca por uma API.
+
+<br>
+
+### ▶️ Como executar:
+
+<br>
+
+```bash
+npm install
+npm start        # http://localhost:4200
+npm test         # testes unitários (Vitest)
+npm run build    # build de produção em dist/
+```
 
 <br>
 
