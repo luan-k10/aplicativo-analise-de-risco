@@ -63,17 +63,6 @@ export class AuthService {
     return true;
   }
 
-  /** Simulação do login corporativo (Outlook/Microsoft) enquanto não há integração real. */
-  entrarComOutlook(): void {
-    const sessao: Usuario = {
-      nome: 'Usuário Outlook',
-      email: 'usuario@outlook.com',
-      matricula: '00000000',
-    };
-    this.storage.gravar(CHAVE_SESSAO, sessao);
-    this._usuario.set(sessao);
-  }
-
   sair(): void {
     this.storage.remover(CHAVE_SESSAO);
     this._usuario.set(null);

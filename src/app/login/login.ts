@@ -37,11 +37,6 @@ export class LoginComponent {
     await this.router.navigate(['/home']);
   }
 
-  async entrarComOutlook(): Promise<void> {
-    this.auth.entrarComOutlook();
-    await this.router.navigate(['/home']);
-  }
-
   esqueceuSenha(): void {
     this.erro.set('');
     this.info.set('Procure o administrador do sistema para redefinir sua senha.');
