@@ -1,50 +1,97 @@
-<div class="page-background">
-  <div class="login-card">
-    <div class="logo-container">
-      <img src="assets/logo/logo-risco.png" alt="Logo Risco" class="risco-logo" />
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="assets/logo/logo-risco.png" alt="Logo Análise de Risco" />
     </div>
-    <header class="login-header">
-      <h1 class="page-title">Novo usuário</h1>
-    </header>
 
-    <main class="login-form-container">
-      <form class="login-form">
-        <div class="input-with-icon">
-          <span class="material-symbols-outlined"> alternate_email </span>
-          <input type="text" id="matricula" placeholder="Digite seu email" />
-        </div>
+    <h1 class="auth-title">Novo usuário</h1>
 
-        <div class="nome-field-group">
-          <div class="input-with-icon">
-            <span class="material-symbols-outlined"> person</span>
-            <input type="text" id="nome" placeholder="Digite seu nome" />
-          </div>
+    <form (ngSubmit)="cadastrar()" novalidate>
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined">alternate_email</span>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="dados.email"
+          placeholder="Email"
+          autocomplete="email"
+          aria-label="Email"
+        />
+      </div>
 
-          <div class="input-with-icon">
-            <span class="material-symbols-outlined">lock</span>
-            <input type="password" id="password" placeholder="Digite sua senha" />
-            <span class="material-symbols-outlined"> visibility_lock </span>
-          </div>
-          <div class="input-with-icon">
-            <span class="material-symbols-outlined">lock</span>
-            <input type="password" id="password" placeholder="Confirmar senha" />
-            <span class="material-symbols-outlined"> visibility_lock </span>
-          </div>
-        </div>
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined">person</span>
+        <input
+          type="text"
+          name="nome"
+          [(ngModel)]="dados.nome"
+          placeholder="Nome"
+          autocomplete="name"
+          aria-label="Nome"
+        />
+      </div>
 
-        <div class="password-field-group"></div>
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined">badge</span>
+        <input
+          type="text"
+          name="matricula"
+          [(ngModel)]="dados.matricula"
+          placeholder="Matrícula"
+          autocomplete="username"
+          aria-label="Matrícula"
+        />
+      </div>
 
-        <button type="submit" class="btn-primary-login">Cadastrar</button>
-      </form>
-    </main>
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined">lock</span>
+        <input
+          [type]="mostrarSenha() ? 'text' : 'password'"
+          name="senha"
+          [(ngModel)]="dados.senha"
+          placeholder="Senha"
+          autocomplete="new-password"
+          aria-label="Senha"
+        />
+        <button
+          type="button"
+          class="icon-toggle"
+          [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'"
+          (click)="mostrarSenha.set(!mostrarSenha())"
+        >
+          <span class="material-symbols-outlined">{{
+            mostrarSenha() ? 'visibility_off' : 'visibility'
+          }}</span>
+        </button>
+      </div>
 
-    <footer class="login-footer">
-      <p>
-        Já possui uma conta?
-        <a routerLink="/login" class="register-link" style="cursor: pointer;">
-          Faça um login
-        </a>
-      </p>
+      <div class="input-with-icon">
+        <span class="material-symbols-outlined">lock</span>
+        <input
+          [type]="mostrarSenha() ? 'text' : 'password'"
+          name="confirmarSenha"
+          [(ngModel)]="dados.confirmarSenha"
+          placeholder="Confirmar senha"
+          autocomplete="new-password"
+          aria-label="Confirmar senha"
+        />
+      </div>
+
+      @if (erro()) {
+        <p class="msg-erro" role="alert">{{ erro() }}</p>
+      }
+      @if (sucesso()) {
+        <p class="msg-sucesso">Cadastro realizado! Redirecionando para o login...</p>
+      }
+
+      <button type="submit" class="btn-primary" style="margin-top: 20px" [disabled]="sucesso()">
+        Cadastrar
+      </button>
+    </form>
+
+    <footer class="auth-footer">
+      Já possui uma conta?
+      <a routerLink="/login" class="link">Faça o login</a>
     </footer>
   </div>
 </div>
