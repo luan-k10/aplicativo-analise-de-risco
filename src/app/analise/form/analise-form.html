@@ -54,13 +54,10 @@
       <fieldset [disabled]="somenteLeitura">
         <!-- Cabeçalho -->
         <section class="secao">
-          <label class="check destaque">
-            <input type="checkbox" [(ngModel)]="a.cabecalho.direitoTrabalhoSeguro" />
-            DIREITO AO TRABALHO SEGURO: S
+          <label class="campo"
+            >Direito ao Trabalho Seguro – motivo
+            <input placeholder="Opcional" [(ngModel)]="a.cabecalho.motivo" />
           </label>
-          @if (a.cabecalho.direitoTrabalhoSeguro) {
-            <label class="campo">Motivo <input [(ngModel)]="a.cabecalho.motivo" /></label>
-          }
           <div class="grade">
             <label class="campo">Empresa <input [(ngModel)]="a.cabecalho.empresa" /></label>
             <label class="campo">Data <input type="date" [(ngModel)]="a.cabecalho.data" /></label>

@@ -85,11 +85,6 @@ fieldset {
   accent-color: var(--laranja-escuro);
 }
 
-.destaque {
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
 .grade {
   display: grid;
   grid-template-columns: 1fr 1fr;

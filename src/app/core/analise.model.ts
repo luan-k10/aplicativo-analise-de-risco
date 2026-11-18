@@ -51,7 +51,6 @@ export interface AnaliseRisco {
   avaliadoEm?: string;
 
   cabecalho: {
-    direitoTrabalhoSeguro: boolean;
     motivo: string;
     empresa: string;
     data: string;
@@ -130,7 +129,6 @@ export function criarAnaliseVazia(): AnaliseRisco {
     criadoEm: '',
     criadoPor: '',
     cabecalho: {
-      direitoTrabalhoSeguro: false,
       motivo: '',
       empresa: '',
       data: hoje(),
@@ -186,9 +184,6 @@ export function validarAnalise(a: AnaliseRisco): string[] {
   if (vazio(a.cabecalho.data)) erros.push('Informe a data.');
   if (vazio(a.cabecalho.servico)) erros.push('Descreva o serviço.');
   if (vazio(a.cabecalho.local)) erros.push('Informe o local.');
-  if (a.cabecalho.direitoTrabalhoSeguro && vazio(a.cabecalho.motivo)) {
-    erros.push('Informe o motivo do Direito ao Trabalho Seguro.');
-  }
   if (vazio(a.responsavelExecucao.nome) || vazio(a.responsavelExecucao.matricula)) {
     erros.push('Informe nome e matrícula do responsável pela execução (seção 4).');
   }
