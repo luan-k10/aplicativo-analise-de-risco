@@ -86,7 +86,7 @@ export interface AnaliseRisco {
 
   /** Seção 5. */
   cienciaArea: {
-    empresa: '' | 'ArcelorMittal' | 'Contratada';
+    empresa: '' | 'Empresa' | 'Contratada';
     nome: string;
     matricula: string;
     ramal: string;

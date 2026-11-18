@@ -55,7 +55,7 @@
 <br>
 
 - **Login / Cadastro** de usuários (matrícula ou e-mail + senha; "Entrar com Outlook" é simulado).
-- **Criar análise de risco**: versão digital do formulário PE-SGS-0028 (Formulário 2 – Análise de Risco Local), com todas as seções (condições especiais, preparação, check-lists, EPI/EPC, emergência, meio ambiente, riscos locais e assinaturas). Cada análise recebe um código (ex.: `1234-569`).
+- **Criar análise de risco**: versão digital do formulário de Análise de Risco Local, com todas as seções (condições especiais, preparação, check-lists, EPI/EPC, emergência, meio ambiente, riscos locais e assinaturas). Cada análise recebe um código (ex.: `1234-569`).
 - **Buscar análise de risco** por código, executor ou matrícula e visualizá-la/imprimi-la.
 - **Adicionar equipe**: cadastro dos membros usados para preencher as assinaturas.
 - **Autorizar análise de risco**: aprovar ou rejeitar análises pendentes.

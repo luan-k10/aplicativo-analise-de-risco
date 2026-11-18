@@ -1,5 +1,5 @@
 /**
- * Definições do Formulário 2 – Análise de Risco Local (PE-SGS-0028 Rev.017).
+ * Definições do formulário de Análise de Risco Local.
  * Os textos seguem o documento original.
  */
 

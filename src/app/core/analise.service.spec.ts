@@ -6,7 +6,7 @@ function analiseValida(): AnaliseRisco {
   const a = criarAnaliseVazia();
   a.cabecalho = {
     ...a.cabecalho,
-    empresa: 'ArcelorMittal',
+    empresa: 'Empresa Exemplo',
     servico: 'Troca de rolo',
     local: 'Laminação',
   };

@@ -21,8 +21,7 @@
     } @else {
       <div class="doc-titulo">
         <div>
-          <strong>FORMULÁRIO 2 – ANÁLISE DE RISCO LOCAL</strong>
-          <small>PE-SGS-0028 · Rev.017</small>
+          <strong>ANÁLISE DE RISCO LOCAL</strong>
         </div>
         @if (somenteLeitura) {
           <span [class]="'badge badge-' + a.status">{{ rotulosStatus[a.status] }}</span>
@@ -138,7 +137,7 @@
                           value="1"
                           [(ngModel)]="a.extrasCondicoes.espacoConfinadoClasse"
                         />
-                        Classe 1 (SESMT da ArcelorMittal)
+                        Classe 1 (SESMT da empresa)
                       </label>
                       <label class="check">
                         <input
@@ -231,10 +230,10 @@
               <input
                 type="radio"
                 name="empresa-area"
-                value="ArcelorMittal"
+                value="Empresa"
                 [(ngModel)]="a.cienciaArea.empresa"
               />
-              ArcelorMittal
+              Empresa
             </label>
             <label class="check">
               <input
@@ -409,7 +408,6 @@
       <p class="regras-ouro">
         É OBRIGATÓRIO O CUMPRIMENTO DE TODAS AS REGRAS DE OURO QUE SALVAM VIDAS, CUMPRIR AS REGRAS
         DE OURO É CONDIÇÃO DE EMPREGO.
-        <small>VERSÃO C</small>
       </p>
 
       <div class="acoes-fim no-print">

@@ -22,7 +22,7 @@ import {
   TELEFONES_EMERGENCIA,
 } from '../../core/analise-form.data';
 
-/** Formulário PE-SGS-0028. Em /analise/nova cria; em /analise/:codigo exibe somente leitura. */
+/** Formulário de análise de risco local. Em /analise/nova cria; em /analise/:codigo exibe somente leitura. */
 @Component({
   selector: 'app-analise-form',
   imports: [FormsModule, RouterLink, DatePipe, HeaderComponent, SimNaoComponent],
